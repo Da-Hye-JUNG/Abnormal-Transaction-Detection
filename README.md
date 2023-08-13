@@ -1,1 +1,3 @@
-# Abnormal-Transaction-Detection
+# 이상 거래 탐지 프로젝트
+
+## 비어플 학회 팀 프로젝트
