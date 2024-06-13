@@ -1,11 +1,12 @@
 # 신용카드 이상 거래 탐지 프로젝트
 비어플 학회 팀 프로젝트
 
-# 들어가며
+
+# 📌 들어가며
 
 안녕하세요. 비어플에서 `신용카드 이상거래 탐지 분석`을 진행한 2조 신보람 최다희 정다혜 박지원입니다.
 
-# 프로젝트 개요
+# 📌 프로젝트 개요
 
 ## 프로젝트 목표
 
@@ -28,17 +29,18 @@
 
 31개의 변수로 구성되어 있으며 정상거래가 284,315건(99.8%), 이상거래가 492건(0.172%)로 매우 불균형을 보인다.
 
-# 프로젝트 수행 과정
+# 📌 프로젝트 수행 과정
 
 ## 전처리 방안
 
 ### ✅ Time 변수를 통해 Hour 변수 생성
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/97ae9738-716c-41e9-8d6a-2e66dca980b9/a82e6975-c4ab-42e0-a07e-5e97b8ad0c6d/Untitled.png)
+<img width="409" alt="image" src="https://github.com/Da-Hye-JUNG/Abnormal-transaction-detection/assets/96599427/acfb73ed-ae76-430c-a87a-ff2f24ca677e">
 
 1일차와 2일차의 히스토그램이 비슷한 형태를 띠고 있어 시간대 변수인 hour변수 생성을 하였다. 여기서 낮은 거래량을 보이는 특정 시간은 거래량이 낮은 새벽으로 추측할 수 있다. time변수가 초단위로 나타나 있음을 이용하여 time변수로 0부터 23까지의 1일차 hour변수를 생성하고 같은 방법으로 0부터 23까지의 2일차 hour변수를 생성했다.
 
-![생성된 Hour 변수 그래프](https://prod-files-secure.s3.us-west-2.amazonaws.com/97ae9738-716c-41e9-8d6a-2e66dca980b9/adbbb789-5e56-4673-8d04-7b957b66e37b/Untitled.png)
+<img width="610" alt="image" src="https://github.com/Da-Hye-JUNG/Abnormal-transaction-detection/assets/96599427/c0969c5c-a79a-4352-bea6-389ba555e50d">
+
 
 생성된 Hour 변수 그래프
 
@@ -99,7 +101,8 @@
 
 ### ✅ Amount 변수 Robust scaling
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/97ae9738-716c-41e9-8d6a-2e66dca980b9/4ac88662-aa25-47c8-be5b-11bc6d11afe7/Untitled.png)
+<img width="301" alt="image" src="https://github.com/Da-Hye-JUNG/Abnormal-transaction-detection/assets/96599427/cff4cd44-ced4-4d75-ab15-e090e3710294">
+
 
 거래 금액을 나타내는 amount변수는 범위가 0부터 2만5691로 매우 큰 범위를 가지고 있음을 확인하였다. 이 변수는 다른 변수들에 비해 영향력이 커 해석할 때 어려움이 있을 수 있다. 따라서 amount변수의 범위를 줄이기 위해 로버스트 스케일링을 진행하였다.
 로버스트 스케일링은 중앙값과 IQR을 사용한 scaling으로 outlier의 영향을 최소화할 수 있다는 장점이 있다. 우리 조는 outlier가 class를 분류하는 지표가 될 수 있다고 판단하여 outlier를 제거하지 않았고 대신 outlier의 영향을 최소화하기 위해 스케일링 방법 중 로버스트 스케일링을 선택하게 되었다.
@@ -117,7 +120,8 @@ TOMEK방법 : 가까이 붙어 있는 서로 다른 클래스의 데이터 중 �
 
 모델의 성능은 다음과 같다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/97ae9738-716c-41e9-8d6a-2e66dca980b9/18992091-5332-49f2-b625-4d8211e2ff4d/Untitled.png)
+<img width="229" alt="image" src="https://github.com/Da-Hye-JUNG/Abnormal-transaction-detection/assets/96599427/6756e67b-12f0-49dd-bb66-1cc1b64dbba0">
+
 
 정확도는 0.99 f1score는 0.88로 과적합의 가능성이 있다.
 
@@ -130,11 +134,12 @@ TOMEK방법 : 가까이 붙어 있는 서로 다른 클래스의 데이터 중 �
 
 모델의 성능은 다음과 같다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/97ae9738-716c-41e9-8d6a-2e66dca980b9/fae96099-999f-416c-9c49-0a5ba578dd56/Untitled.png)
+<img width="224" alt="image" src="https://github.com/Da-Hye-JUNG/Abnormal-transaction-detection/assets/96599427/14391f0e-1c8b-4dcf-8fe4-59937547072a">
+
 
 정확도는 0.92 재현율은 0.92 정밀도는 0.99 f1score는 0.96으로 모두 0.92이상의 값을 가지는 것을 확인하였다. **모든 평가지표에서 0.92 이상**의 점수를 달성하며 불균형 문제를 해결한 **One Class SVM** 모델을 최종모델로 선정하였다.   
 
-# 대회 팀 구성 및 역할
+## 대회 팀 구성 및 역할
 
 신보람 - 데이터 엔지니어링 및 모델링
 
@@ -156,9 +161,9 @@ Data&ML - R, RStudio
 
 ### 2. 변수에 대한 정보 부족
 
-이미 pca처리된 데이터가 대부분으로 더 효과적인 분석이 어려웠다.
+이미 PCA처리된 데이터가 대부분으로 더 효과적인 분석이 어려웠다.
 
-# 감사합니다.
+# 📌 감사합니다.
 
 ---
 
