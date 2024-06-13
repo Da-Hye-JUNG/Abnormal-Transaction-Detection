@@ -1,6 +1,5 @@
 # 신용카드 이상 거래 탐지 프로젝트
-
-## 비어플 학회 팀 프로젝트
+비어플 학회 팀 프로젝트
 
 # 들어가며
 
@@ -19,11 +18,13 @@
 
 ## 사용 데이터 소개
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/97ae9738-716c-41e9-8d6a-2e66dca980b9/7b9a14cd-7dd2-4aa4-9bc0-f7f5e8bd68a6/Untitled.png)
+![image](https://github.com/Da-Hye-JUNG/Abnormal-transaction-detection/assets/96599427/1eb8537c-32c8-4001-b28d-50390d47adeb)
+
 
 2013년 9월 유럽에서 2일동안 카드 소유자들의 신용카드 거래 정보를 나타낸 데이터이며 첫 거래 시간을 기준으로 얼마나 차이가 나는지를 초단위로 나타낸 time변수, 금융거래 정보로 pca처리가 된 28개의 V변수 그리고 거래금액을 나타낸 amount변수 마지막으로 이상거래 여부를 나타낸 Target변수로 구성되어 있다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/97ae9738-716c-41e9-8d6a-2e66dca980b9/77806451-02a1-4412-b437-3d2017b55cbf/Untitled.png)
+![image](https://github.com/Da-Hye-JUNG/Abnormal-transaction-detection/assets/96599427/8ce3f6f9-985f-4b77-bdba-234008ac8c3f)
+
 
 31개의 변수로 구성되어 있으며 정상거래가 284,315건(99.8%), 이상거래가 492건(0.172%)로 매우 불균형을 보인다.
 
@@ -73,17 +74,21 @@
 
 ②   Class에 따른 histogram 유사한 변수
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/97ae9738-716c-41e9-8d6a-2e66dca980b9/0f84cd4f-e0ff-47b0-9e9b-490c71b35c58/Untitled.png)
+![image](https://github.com/Da-Hye-JUNG/Abnormal-transaction-detection/assets/96599427/60231134-1559-4b12-b27e-57624822daea)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/97ae9738-716c-41e9-8d6a-2e66dca980b9/2e5f04bb-485b-447b-bc99-421addd875a5/Untitled.png)
+
+![image](https://github.com/Da-Hye-JUNG/Abnormal-transaction-detection/assets/96599427/c39aa967-b248-470d-9e41-21b3d6ff3bdc)
+
 
 → V13, V15, V20 ~ V28 변수
 
 ③   Class에 따른 box plot 유사한 변수 
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/97ae9738-716c-41e9-8d6a-2e66dca980b9/146ac699-abdd-4810-877a-739f4f97dd21/Untitled.png)
+![image](https://github.com/Da-Hye-JUNG/Abnormal-transaction-detection/assets/96599427/36e897bc-32b9-4c3a-9362-0717efd20842)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/97ae9738-716c-41e9-8d6a-2e66dca980b9/610515e4-7006-452b-97fd-6fadcb82687d/Untitled.png)
+
+![image](https://github.com/Da-Hye-JUNG/Abnormal-transaction-detection/assets/96599427/9949c861-1d6b-4bab-b895-ab540b61592f)
+
 
 → V8, V13, V15, V20 ~ V28변수
 
